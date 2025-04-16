@@ -1,0 +1,26 @@
+{
+  "name": "rock-paper-scissors",
+  "version": "1.0.0",
+  "main": "Rock Paper Scissors V2.js",
+  "scripts": {
+    "test": "jest"
+  },
+ "jest": {
+  "testEnvironment": "jsdom"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vanitk1/Rock-Paper-Scissors.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vanitk1/Rock-Paper-Scissors/issues"
+  },
+  "homepage": "https://github.com/Vanitk1/Rock-Paper-Scissors#readme",
+  "description": "",
+  "devDependencies": {
+    "jest-environment-jsdom": "^29.7.0"
+  }
+}
