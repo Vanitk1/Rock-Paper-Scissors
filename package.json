@@ -5,9 +5,9 @@
   "scripts": {
     "test": "jest"
   },
- "jest": {
-  "testEnvironment": "jsdom"
-},
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Vanitk1/Rock-Paper-Scissors.git"
@@ -22,5 +22,8 @@
   "description": "",
   "devDependencies": {
     "jest-environment-jsdom": "^29.7.0"
+  },
+  "dependencies": {
+    "jest": "^29.7.0"
   }
 }
