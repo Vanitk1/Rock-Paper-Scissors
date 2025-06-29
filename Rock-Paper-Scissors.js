@@ -119,18 +119,18 @@ function keepComputerScore() {
         computerScoreBox.textContent = computerScore;
       }
 
-// function game(playerSelection) {
-//     let player = playerSelection;
-//     let computer = computerPlay();
-//     playRound(player, computer);
+function game(playerSelection) {
+    let player = playerSelection;
+    let computer = computerPlay();
+    playRound(player, computer);
 
-//     if (playerScore === 5) {
-//         return declareWinner();
-//     }
-//     else if (computerScore === 5) {
-//         return declareWinner();
-//     }
-//     }
+    if (playerScore === 5) {
+        return declareWinner();
+    }
+    else if (computerScore === 5) {
+        return declareWinner();
+    }
+    }
 
 
 function declareWinner() {
@@ -154,11 +154,16 @@ function initUI() {
   const rockButton = document.querySelector('.rock');
   const paperButton = document.querySelector('.paper');
   const scissorsButton = document.querySelector('.scissors');
+  const resetButton = document.querySelector('.reset-game')
 
   if (rockButton && paperButton && scissorsButton) {
     rockButton.addEventListener('click', () => playRound("rock"));
     paperButton.addEventListener('click', () => playRound("paper"));
     scissorsButton.addEventListener('click', () => playRound("scissors"));
+  }
+
+  if (resetButton) {
+    resetButton.addEventListener('click', refreshPage);
   }
 }
 

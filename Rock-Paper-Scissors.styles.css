@@ -69,3 +69,18 @@ body {
   margin: 15px 45px 10px 65px;
   text-decoration: underline;
 }
+
+.reset-game {
+  background-color: #666;
+  font-size: 16px;
+  color: white;
+  border: 0;
+  border-radius: 15px;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+.reset-game:hover {
+  background-color: #444;
+}
