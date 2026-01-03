@@ -4,6 +4,10 @@ A simple game of rock, paper, scissors.
 
 The first to 5 wins the game!
 
+**Live Demo**
+
+https://vanitk1.github.io/Rock-Paper-Scissors/
+
 **Technologies**
 
 HTML5, CSS, JavaScript 
@@ -22,4 +26,5 @@ Clone the repository to your local repository.
 1. Install the Live Server extension.
 2. In the buttom right hand corner click go live
 3. Right-click on Rock Paper Scissors.html 
+
 4. Open with Live Server
