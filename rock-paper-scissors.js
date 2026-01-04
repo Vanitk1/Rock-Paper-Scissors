@@ -1,5 +1,6 @@
 let playerScore = 0;
 let computerScore = 0;
+let gameOver = false;
 
 function computerPlay() {
     const choices = ['rock', 'paper', 'scissors'];
@@ -11,6 +12,11 @@ function computerPlay() {
 
 function playRound(playerSelection, computerSelection) { 
     console.log("Player Chooses: " + playerSelection);
+
+    if (gameOver) {
+      return;
+    }
+
     computerSelection = computerPlay();
 
         if (
@@ -48,7 +54,7 @@ function playRound(playerSelection, computerSelection) {
                     `WOOOOOO YOU WON!
                       ${capitalize(
                           playerSelection
-                        )} beats ${computerSelection}. Go on play another round, See if you can smash the computer again.` 
+                        )} beats ${computerSelection}. Go on play another round, See if you can smash the computer again.`
                         );
              }
                 
@@ -97,10 +103,29 @@ function playRound(playerSelection, computerSelection) {
                       );
             }  
         }
+
+        if (playerScore === 5 || computerScore === 5) {
+          declareWinner();
+        }
     }
 
-function displayResults(result) {
-  alert (result);
+function displayResults(result, type = "neutral") {
+  const resultsBox = document.querySelector("#results");
+  if(!resultsBox) {
+    return;
+  }
+
+  resultsBox.textContent = result;
+
+  resultsBox.classList.remove("result--win", "result--lose")
+
+  if (type === "win") {
+    resultsBox.classList.add("result--win")
+  } 
+
+  if (type === "lose") {
+    resultsBox.classList.add("result--lose")
+  }
   }
 
 function capitalize(words) {
@@ -119,27 +144,19 @@ function keepComputerScore() {
         computerScoreBox.textContent = computerScore;
       }
 
-function game(playerSelection) {
-    let player = playerSelection;
-    let computer = computerPlay();
-    playRound(player, computer);
-
-    if (playerScore === 5) {
-        return declareWinner();
-    }
-    else if (computerScore === 5) {
-        return declareWinner();
-    }
-    }
-
-
 function declareWinner() {
+  gameOver = true
 
-    if (playerScore > computerScore) {
-      return alert("You win!"), console.log("you win");
-    } else {
-      return alert("You lost"), console.log("you lose");
-    }
+  if (playerScore > computerScore) {
+    displayResults("Woo! you won the game!, Click the Reset button play again.", "win")
+  } else {
+    displayResults(":( You lost - The computer wins, Click the reset button to play again.", "lose")
+  }
+
+  document.querySelectorAll(".rock, .paper, .scissors").forEach((btn) => {
+    btn.disabled = true;
+  });
+
 }
 
 function refreshPage(){
