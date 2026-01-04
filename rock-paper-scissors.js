@@ -33,7 +33,7 @@ function playRound(playerSelection, computerSelection) {
                );
              } else if (playerScore === 2) {
                displayResults(
-                 `nice smashed the computer twice. ${capitalize(
+                 `Nice smashed the computer twice. ${capitalize(
                    playerSelection
                  )} beats ${computerSelection}.`
                );
